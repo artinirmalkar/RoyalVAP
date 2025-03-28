@@ -46,9 +46,16 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-6xl font-bold">
             Partner with RoyalVAP Event Management in Bilapur
             </h1>
+           
             <p className="text-lg text-gray-300">
             Bilaspur's #1 Exclusive Event Company
             </p>
+
+            {/* Contact  */}
+            <div className="flex gap-1">
+              <div className="hidden md:block text-sm">📞 +91-7999051152,</div>
+              <div className="hidden md:block text-sm">+91-7898688802</div>
+            </div>
 
             {/* Social Icons */}
             <div className="flex space-x-4">
