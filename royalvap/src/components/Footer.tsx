@@ -7,42 +7,42 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12 relative">
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{
-          backgroundImage:
-            'url(/images/beautiful-photozone-with-big-wreath-decorated-with-greenery-roses-centerpiece-candles-sides-garland-hanged-trees.webp)',
-        }}
-      ></div>
+    <footer
+      className="relative bg-black py-16 bg-cover bg-center bg-no-repeat text-white"
+      style={{ backgroundImage: "url('/images/wedding-1.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black opacity-70"></div>
 
       <Container>
         {/* About Section */}
-        <div className="text-center flex flex-col items-center gap-3 justify-center max-w-xl m-auto py-10">
+        <div className="relative text-center flex flex-col items-center gap-3 justify-center max-w-xl mx-auto py-10 text-white">
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <FaInstagram className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
-            <FaYoutube className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
-            <FaFacebook className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
-            <FaLinkedin className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
-            <FaTwitter className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
+            {[FaInstagram, FaYoutube, FaFacebook, FaLinkedin, FaTwitter].map((Icon, index) => (
+              <Icon
+                key={index}
+                className="w-6 h-6 transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer"
+              />
+            ))}
           </div>
 
           <h2 className="text-2xl font-bold">RoyalVAP Event Management</h2>
-          <p className="text-sm">
-            Planning a full event has never been easier! RoyalVAP Event Management, Company based in
-            Bilaspur Chhattisgarh, India, offers a wide range of services to make your events
+          <p className="text-sm px-4 md:px-0">
+            Planning a full event has never been easier! RoyalVAP Event Management, based in
+            Bilaspur, Chhattisgarh, India, offers a wide range of services to make your events
             stress-free and memorable.
           </p>
         </div>
-        <div className="relative z-10  px-6 grid grid-cols-1 md:grid-cols-4 gap-8 ">
+
+        {/* Footer Links */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 text-center md:text-left">
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">QUICK LINKS</h3>
             <ul className="space-y-2">
               {['Home', 'About', 'Venues', 'Gallery', 'Contact'].map((link) => (
                 <li key={link}>
-                  <Link href={`/${link.toLowerCase()}`} className="hover:underline">
+                  <Link href={`/${link.toLowerCase()}`} className="hover:underline text-white">
                     {link}
                   </Link>
                 </li>
@@ -62,7 +62,7 @@ const Footer = () => {
                 'Destination Wedding',
               ].map((service) => (
                 <li key={service}>
-                  <Link href="#" className="hover:underline">
+                  <Link href="#" className="hover:underline text-white">
                     {service}
                   </Link>
                 </li>
@@ -70,13 +70,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links (Alternative Section - Can be replaced) */}
           <div>
             <h3 className="text-lg font-semibold mb-4">QUICK LINKS</h3>
             <ul className="space-y-2">
               {['Home', 'About', 'Venues', 'Gallery', 'Contact'].map((link) => (
                 <li key={link}>
-                  <Link href={`/${link.toLowerCase()}`} className="hover:underline">
+                  <Link href={`/${link.toLowerCase()}`} className="hover:underline text-white">
                     {link}
                   </Link>
                 </li>
@@ -85,26 +85,32 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="flex flex-col items-center md:items-start  text-center justify-center text-center md:text-left">
             <h3 className="text-lg font-semibold mb-4">CONTACT INFO</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <MapPin size={18} />
-                <span>RoyalVAP Event Management, Bilaspur Chhattisgarh India, 495001</span>
+            <ul className="space-y-4 text-sm w-full">
+              <li className="flex items-start gap-3">
+                <MapPin size={20} className="text-purple-400 flex-shrink-0" />
+                <span className="max-w-xs">
+                  RoyalVAP Event Management, Bilaspur, Chhattisgarh, India - 495001
+                </span>
               </li>
-
-              <li className="flex items-center gap-2">
-                <Phone size={18} />
-                <span>+91-7999051152, +91-7898688802</span>
+              <li className="flex items-center gap-3">
+                <Phone size={20} className="text-purple-400 flex-shrink-0" />
+                <span className="break-words">+91-7999051152, +91-7898688802</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={18} />
-                <span>royalvapeventmanagement@gmail.com</span>
+              <li className="flex items-center gap-3">
+                <Mail size={20} className="text-purple-400 flex-shrink-0" />
+                <span className="break-words">royalvapeventmanagement@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
       </Container>
+
+      {/* Copyright Section */}
+      <div className="text-center text-gray-400 text-sm mt-10">
+        © {new Date().getFullYear()} RoyalVAP Event Management. All rights reserved.
+      </div>
     </footer>
   );
 };

@@ -44,16 +44,16 @@ export default function InquirySection() {
       <Container className="relative z-10 flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-10">
         <div className="max-w-xl ">
           <h2 className="text-md uppercase  tracking-wide text-purple-300">
-            RoyalVAP - India&apos;s Very Own Event Company
+            RoyalVAP - Chhattisgarh&apos;s Very Own Event Company
           </h2>
           <h2 className="text-3xl font-bold mb-4 uppercase mt-3 text-white ">
-            Looking for the Most Creative & Innovative Event Planners in India?
+            Looking for the Most Creative & Innovative Event Planners in Chhattisgarh India?
           </h2>
           <p className=" mb-4 text-white">
             Imagine celebrating the most special events of your life without worrying about a single
             thing. RoyalVAP Events is here to make your dream events come true! Our expert event
             management team offers professional event planning and management services in cities,
-            villages, and small towns across India, from south to north, using creative and
+            villages, and small towns across Chhattisgarh India, from south to north, using creative and
             innovative methods to plan and curate perfect, hassle-free celebrations that will
             captivate your attendees.
           </p>
@@ -69,7 +69,7 @@ export default function InquirySection() {
               value={formik.values.fullName}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="mb-2 bg-white"
+              className="mt-4 bg-white"
             />
             {formik.touched.fullName && formik.errors.fullName && (
               <p className="text-red-500 text-sm">{formik.errors.fullName}</p>
@@ -81,7 +81,7 @@ export default function InquirySection() {
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="mb-2 bg-white"
+              className="mt-4 bg-white"
             />
             {formik.touched.phoneNumber && formik.errors.phoneNumber && (
               <p className="text-red-500 text-sm">{formik.errors.phoneNumber}</p>
@@ -94,7 +94,7 @@ export default function InquirySection() {
               value={formik.values.email}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="mb-2 bg-white"
+              className="mt-4 bg-white"
             />
             {formik.touched.email && formik.errors.email && (
               <p className="text-red-500 text-sm">{formik.errors.email}</p>
@@ -106,7 +106,7 @@ export default function InquirySection() {
               value={formik.values.message}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              className="w-full p-2 border  rounded-md mb-2 bg-white"
+              className="w-full p-2 border  rounded-md mt-4 bg-white"
             />
             {formik.touched.message && formik.errors.message && (
               <p className="text-red-500 text-sm">{formik.errors.message}</p>
