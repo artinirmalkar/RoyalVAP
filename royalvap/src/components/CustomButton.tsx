@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
+  children: React.ReactNode;
   className?: string;
 }
 
-const CommonButton: React.FC<ButtonProps> = ({ label, className, ...props }) => {
+const CommonButton: React.FC<ButtonProps> = ({ children, className, ...props }) => {
   return (
     <button
       className={`bg-gradient-to-r from-purple-300 to-purple-500 text-white cursor-pointer
@@ -14,7 +14,7 @@ const CommonButton: React.FC<ButtonProps> = ({ label, className, ...props }) => 
         focus:outline-none focus:ring-2 focus:ring-purple-400 ${className}`}
       {...props}
     >
-      {label}
+      {children}
     </button>
   );
 };

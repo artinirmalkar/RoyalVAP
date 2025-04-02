@@ -1,10 +1,11 @@
-"use client";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+'use client';
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isGalleryMenuOpen, setIsGalleryMenuOpen] = useState(false);
   const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
 
   return (
@@ -16,12 +17,32 @@ const Header = () => {
         </div>
 
         {/* Nav Menu (Desktop) */}
-        <nav className="hidden md:flex space-x-6">
-          {["Home", "About Us", "Wedding Venues", "Gallery", "Contact Us"].map((item) => (
-            <a key={item} href="#" className="hover:text-gray-300">
+        <nav className="hidden md:flex space-x-6 items-center justify-center px-10 ">
+          {['Home', 'About Us', 'Wedding Venues', 'Contact Us'].map((item) => (
+            <Link key={item} href="#" className="hover:text-gray-300 uppercase text-sm">
               {item}
-            </a>
+            </Link>
           ))}
+
+          {/* Gallery with Dropdown */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setIsGalleryMenuOpen(true)}
+            onMouseLeave={() => setIsGalleryMenuOpen(false)}
+          >
+            <Link href="#" className="hover:text-gray-300 uppercase text-sm">
+              Gallery
+            </Link>
+            {isGalleryMenuOpen && (
+              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
+                {['Photo Gallery', 'Video Gallery', 'Shorts Gallery'].map((gallery) => (
+                  <Link key={gallery} href="#" className="block px-4 py-2 hover:bg-gray-800">
+                    {gallery}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Services with Dropdown */}
           <div
@@ -29,28 +50,24 @@ const Header = () => {
             onMouseEnter={() => setIsServiceMenuOpen(true)}
             onMouseLeave={() => setIsServiceMenuOpen(false)}
           >
-            <a href="#" className="hover:text-gray-300">
+            <Link href="#" className="hover:text-gray-300 uppercase text-sm">
               Services
-            </a>
+            </Link>
             {isServiceMenuOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-black text-white shadow-lg rounded-md">
+              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
                 {[
-                  "Wedding Planners",
-                  "Destination Wedding in Kerala",
-                  "Corporate Event Management",
-                  "Wedding Photography & Videography",
-                  "Catering Service",
-                  "Beach Wedding",
-                  "Music & Entertainment",
-                  "Private Parties",
+                  'Wedding Planners',
+                  'Destination Wedding in Kerala',
+                  'Corporate Event Management',
+                  'Wedding Photography & Videography',
+                  'Catering Service',
+                  'Beach Wedding',
+                  'Music & Entertainment',
+                  'Private Parties',
                 ].map((service) => (
-                  <a
-                    key={service}
-                    href="#"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
+                  <Link key={service} href="#" className="block px-4 py-2 hover:bg-gray-800">
                     {service}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -58,7 +75,10 @@ const Header = () => {
         </nav>
 
         {/* Contact */}
-        <div className="hidden md:block text-sm">📞 +91-859-001-0011</div>
+        <div className="flex gap-1">
+          <div className="hidden md:block text-sm">📞 +91-7999051152,</div>
+          <div className="hidden md:block text-sm">+91-7898688802</div>
+        </div>
 
         {/* Hamburger Menu (Mobile) */}
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -69,12 +89,15 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-black text-white py-4">
-          {["Home", "About Us", "Services", "Wedding Venues", "Gallery", "Contact Us"].map((item) => (
-            <a key={item} href="#" className="block px-6 py-2 hover:bg-gray-800">
-              {item}
-            </a>
-          ))}
-          <div className="px-6 py-2 text-sm">📞 +91-859-001-0011</div>
+          {['Home', 'About Us', 'Services', 'Wedding Venues', 'Gallery', 'Contact Us'].map(
+            (item) => (
+              <Link key={item} href="#" className="block px-6 py-2 hover:bg-gray-800">
+                {item}
+              </Link>
+            ),
+          )}
+          <div className="px-6 py-2 text-sm">📞 +91-7999051152</div>
+          <div className="px-6 py-2 text-sm">📞 +91-7999051152</div>
         </div>
       )}
     </header>
