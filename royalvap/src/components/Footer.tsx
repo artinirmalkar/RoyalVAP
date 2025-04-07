@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <footer
       className="relative bg-black py-16 bg-cover bg-center bg-no-repeat text-white"
-      style={{ backgroundImage: "url('/images/wedding-1.webp')" }}
+      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
     >
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      <div className="absolute inset-0 bg-black opacity-80"></div>
 
       <Container>
         {/* About Section */}

@@ -49,14 +49,14 @@ const HeroSection = () => {
             Take a trip into paradise
           </h2>
           <h1 className="text-3xl md:text-6xl font-bold">
-            Partner with RoyalVAP Event Management in Bilapur
+            Partner with RoyalVAP Event Management in Chhattisgarh
           </h1>
 
-          <p className="text-md text-gray-300">Bilaspur&apos;s #1 Exclusive Event Company</p>
+          <p className="text-md text-gray-300">Chhattisgarh&apos;s #1 Exclusive Event Company</p>
 
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <FaInstagram className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
+            <FaInstagram className="w-6 h-6  transition-Chhattisgarh duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
             <FaYoutube className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
             <FaFacebook className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
             <FaLinkedin className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
