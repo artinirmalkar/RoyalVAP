@@ -9,7 +9,7 @@ const AboutSection = () => {
           {/* Left Side - Text Content */}
           <div className="lg:w-1/2 space-y-6 text-black">
             <h2 className="text-2xl md:text-3xl font-semibold">
-              RoyalVAP - A EVENT MANAGEMENT COMPANY IN BILASPUR
+              RoyalVAP - A EVENT MANAGEMENT COMPANY IN CHHATTISGARH
             </h2>
             <p className="text-gray-600">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fuga dolor nam eius

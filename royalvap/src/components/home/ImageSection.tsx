@@ -47,7 +47,7 @@ export default function WeddingSection() {
           </h2>
           <p className="text-gray-700 mb-4">
             Make your dream wedding a reality with <strong>RoyalVAP Event Management</strong>, your
-            trusted partner for premium weddings in <strong>Chhattisgarh and across India</strong>.
+            trusted partner for premium weddings in <strong>Chhattisgarh and across Chhattisgarh India</strong>.
             Whether you envision a grand resort celebration or a traditional wedding infused with
             rich cultural elements, we bring every detail to life with seamless planning and
             flawless execution.
@@ -55,7 +55,7 @@ export default function WeddingSection() {
           <p className="text-gray-700 mb-6">
             From <strong>venue selection</strong> to personalized décor, we ensure a stress-free and
             memorable experience. With a proven track record of delivering exceptional weddings
-            across <strong>India</strong>, RoyalVAP is here to make your special day truly
+            across <strong>Chhattisgarh India</strong>, RoyalVAP is here to make your special day truly
             extraordinary!
           </p>
           <div className="flex gap-3 flex-wrap">

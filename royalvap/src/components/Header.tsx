@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { FaCaretDown } from "react-icons/fa6";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +31,23 @@ const Header = () => {
             onMouseEnter={() => setIsGalleryMenuOpen(true)}
             onMouseLeave={() => setIsGalleryMenuOpen(false)}
           >
-            <Link href="#" className="hover:text-gray-300 uppercase text-sm">
-              Gallery
+            <Link href="#" className="hover:text-gray-300 uppercase text-sm flex gap-1 items-center justify-center">
+              <span>Gallery</span> <FaCaretDown />
             </Link>
             {isGalleryMenuOpen && (
-              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
-                {['Photo Gallery', 'Video Gallery', 'Shorts Gallery'].map((gallery) => (
-                  <Link key={gallery} href="#" className="block px-4 py-2 hover:bg-gray-800">
-                    {gallery}
+              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
+                {[
+                  { label: 'Photo Gallery', path: '/gallery/photo' },
+                  { label: 'Video Gallery', path: '/gallery/video' },
+                  { label: 'Shorts Gallery', path: '/gallery/shorts' },
+                ].map(({ label, path }) => (
+                  <Link
+                    key={label}
+                    href={path}
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setIsGalleryMenuOpen(false)}
+                  >
+                    {label}
                   </Link>
                 ))}
               </div>
@@ -50,11 +60,11 @@ const Header = () => {
             onMouseEnter={() => setIsServiceMenuOpen(true)}
             onMouseLeave={() => setIsServiceMenuOpen(false)}
           >
-            <Link href="#" className="hover:text-gray-300 uppercase text-sm">
-              Services
+             <Link href="#" className="hover:text-gray-300 uppercase text-sm flex gap-1 items-center justify-center">
+              <span>Services</span> <FaCaretDown />
             </Link>
             {isServiceMenuOpen && (
-              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
+              <div className="absolute left-0 mt-2 w-52 bg-black/50 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
                 {[
                   'Wedding Planners',
                   'Destination Wedding in Kerala',
