@@ -8,6 +8,7 @@ import Banner from "@/components/Banner";
 import Container from '@/components/Container';
 import { photoGallery } from '@/constants/gallery';
 import { getImageDimensions } from '@/utils/methods';
+import Breadcrumb from '@/components/BreadCrumb';
 
 const categories = [
   { label: 'Wedding Decors', value: 'wedding' },
@@ -63,9 +64,10 @@ export default function GalleryPage() {
   return (
     <div>
       <Banner
-        title="Photos Gallery of RoyalVAP"
+        title="Photo Gallery of RoyalVAP"
         imageUrl="https://images.unsplash.com/photo-1601482441062-b9f13131f33a?q=80&w=2940&auto=format&fit=crop"
       />
+      <Breadcrumb/>
       <Container className="py-10">
         <div className="flex flex-wrap gap-3 mb-8">
           {categories.map((cat) => (

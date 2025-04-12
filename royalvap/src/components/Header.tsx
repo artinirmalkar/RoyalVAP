@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { FaCaretDown } from "react-icons/fa6";
 import { navLinks } from '@/constants/header';
+import { services } from '@/constants/home';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,16 +67,7 @@ const Header = () => {
             </Link>
             {isServiceMenuOpen && (
               <div className="absolute left-0 mt-2 w-52 bg-black/50 text-white  text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
-                {[
-                  'Wedding Planners',
-                  'Destination Wedding in Kerala',
-                  'Corporate Event Management',
-                  'Wedding Photography & Videography',
-                  'Catering Service',
-                  'Beach Wedding',
-                  'Music & Entertainment',
-                  'Private Parties',
-                ].map((service) => (
+                {services?.map((service) => (
                   <Link key={service} href="#" className="block px-4 py-2 hover:bg-gray-800">
                     {service}
                   </Link>
