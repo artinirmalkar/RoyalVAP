@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { FaCaretDown } from "react-icons/fa6";
+import { navLinks } from '@/constants/header';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,15 +14,15 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-transparent text-white z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <Link href='/' className="flex items-center space-x-2">
           <span className="text-xl font-semibold">RoyalVAP</span>
-        </div>
+        </Link>
 
         {/* Nav Menu (Desktop) */}
         <nav className="hidden md:flex space-x-6 items-center justify-center px-10 ">
-          {['Home', 'About Us', 'Wedding Venues', 'Contact Us'].map((item) => (
-            <Link key={item} href="#" className="hover:text-gray-300 uppercase text-sm">
-              {item}
+       { navLinks?.map((item, i) => (
+            <Link key={i} href={item?.path} className="hover:text-gray-300 uppercase text-sm">
+              {item?.label}
             </Link>
           ))}
 
@@ -31,11 +32,11 @@ const Header = () => {
             onMouseEnter={() => setIsGalleryMenuOpen(true)}
             onMouseLeave={() => setIsGalleryMenuOpen(false)}
           >
-            <Link href="#" className="hover:text-gray-300 uppercase text-sm flex gap-1 items-center justify-center">
+            <Link href="#" className="hover:text-gray-300 h-10 uppercase text-sm flex gap-1 items-center justify-center">
               <span>Gallery</span> <FaCaretDown />
             </Link>
             {isGalleryMenuOpen && (
-              <div className="absolute left-0 mt-2 w-52 bg-black/80 text-white text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
+              <div className="absolute left-0  w-52 bg-black/80 text-white text-sm capitalize shadow-lg rounded-md backdrop-blur-md border border-white/10">
                 {[
                   { label: 'Photo Gallery', path: '/gallery/photo' },
                   { label: 'Video Gallery', path: '/gallery/video' },

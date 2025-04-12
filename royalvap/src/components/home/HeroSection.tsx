@@ -56,7 +56,7 @@ const HeroSection = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <FaInstagram className="w-6 h-6  transition-Chhattisgarh duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
+           <Link href={'https://www.instagram.com/lucky.event_bsp'} target='_blank'><FaInstagram className="w-6 h-6  transition-Chhattisgarh duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" /></Link> 
             <FaYoutube className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
             <FaFacebook className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
             <FaLinkedin className="w-6 h-6  transition-all duration-300 ease-in-out hover:scale-110 hover:text-purple-400 cursor-pointer" />
