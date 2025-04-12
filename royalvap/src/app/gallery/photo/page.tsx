@@ -18,6 +18,13 @@ const categories = [
   { label: 'Other events', value: 'other' },
 ];
 
+type PhotoItem = {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+  category?: string;
+};
 
 
 export default function GalleryPage() {
@@ -25,7 +32,8 @@ export default function GalleryPage() {
   const [index, setIndex] = useState<number | null>(null);
 
 
-  const [photos, setPhotos] = useState<any[]>([]);
+ 
+  const [photos, setPhotos] = useState<PhotoItem[]>([]);
 
   const filteredPhotos = photos.filter((photo) => photo.category === activeCategory);
 
@@ -42,7 +50,7 @@ export default function GalleryPage() {
               height,
               alt: item?.src,
             };
-          } catch (error) {
+          } catch  {
             return {
               src: item.src,
               width: 50,
